@@ -1,0 +1,119 @@
+{
+  "name": "@vipin733/nodescope",
+  "version": "0.2.0",
+  "type": "module",
+  "description": "A Laravel Telescope-inspired debugging and monitoring package for Node.js and Bun applications",
+  "author": "Vipin",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --external better-sqlite3 --external pg --external mysql2 --external express --external hono --external fastify --external @nestjs/common --external rxjs",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch --external better-sqlite3 --external pg --external mysql2 --external express --external hono --external fastify --external @nestjs/common --external rxjs",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint src --ext .ts",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/nodescope.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/nodescope/issues"
+  },
+  "homepage": "https://github.com/yourusername/nodescope#readme",
+  "keywords": [
+    "debugging",
+    "monitoring",
+    "telescope",
+    "devtools",
+    "nodejs",
+    "node",
+    "bun",
+    "express",
+    "hono",
+    "fastify",
+    "nestjs",
+    "observability",
+    "developer-tools",
+    "debug",
+    "logging",
+    "database",
+    "queries",
+    "requests",
+    "middleware",
+    "websocket",
+    "real-time"
+  ],
+  "dependencies": {
+    "nanoid": "^5.0.0",
+    "ws": "^8.16.0"
+  },
+  "optionalDependencies": {
+    "better-sqlite3": "^9.4.0",
+    "mysql2": "^3.9.0",
+    "pg": "^8.11.0"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@types/better-sqlite3": "^7.6.8",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.0",
+    "@types/pg": "^8.11.0",
+    "@types/supertest": "^6.0.3",
+    "@types/ws": "^8.5.10",
+    "@vitest/coverage-v8": "^1.2.0",
+    "express": "^4.18.2",
+    "fastify": "^4.26.0",
+    "hono": "^4.0.0",
+    "rxjs": "^7.8.0",
+    "supertest": "^7.2.2",
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.2.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": ">=9.0.0",
+    "express": ">=4.0.0",
+    "fastify": ">=4.0.0",
+    "hono": ">=4.0.0",
+    "rxjs": ">=7.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@nestjs/common": {
+      "optional": true
+    },
+    "express": {
+      "optional": true
+    },
+    "fastify": {
+      "optional": true
+    },
+    "hono": {
+      "optional": true
+    },
+    "rxjs": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

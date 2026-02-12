@@ -1,0 +1,28 @@
+{
+  "name": "nodescope",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A Laravel Telescope-inspired debugging and monitoring package for Node.js/Bun",
+  "author": "Vipin",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @nodescope/core",
+    "dev": "npm run dev -w @nodescope/core",
+    "test": "npm run test -w @nodescope/core",
+    "test:watch": "npm run test:watch -w @nodescope/core",
+    "test:coverage": "npm run test:coverage -w @nodescope/core",
+    "lint": "npm run lint -w @nodescope/core",
+    "clean": "rm -rf node_modules packages/*/node_modules packages/*/dist examples/*/node_modules"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "prettier": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
