@@ -1,6 +1,6 @@
 {
   "name": "@vipin733/nodescope",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "description": "A Laravel Telescope-inspired debugging and monitoring package for Node.js and Bun applications",
   "author": "Vipin",
@@ -32,13 +32,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/nodescope.git",
+    "url": "git+https://github.com/vipin733/nodescope.git",
     "directory": "packages/core"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/nodescope/issues"
+    "url": "https://github.com/vipin733/nodescope/issues"
   },
-  "homepage": "https://github.com/yourusername/nodescope#readme",
+  "homepage": "https://github.com/vipin733/nodescope#readme",
   "keywords": [
     "debugging",
     "monitoring",

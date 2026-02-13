@@ -3,6 +3,7 @@
 > 🔭 A Laravel Telescope-inspired debugging and monitoring package for Node.js and Bun applications
 
 [![npm version](https://img.shields.io/npm/v/@vipin733/nodescope.svg)](https://www.npmjs.com/package/@vipin733/nodescope)
+[![CI](https://github.com/vipin733/nodescope/actions/workflows/ci.yml/badge.svg)](https://github.com/vipin733/nodescope/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## ✨ Features
