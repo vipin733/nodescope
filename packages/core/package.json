@@ -68,7 +68,7 @@
   },
   "optionalDependencies": {
     "better-sqlite3": "^9.4.0",
-    "mysql2": "^3.9.0",
+    "mysql2": "^3.17.1",
     "pg": "^8.11.0"
   },
   "devDependencies": {
