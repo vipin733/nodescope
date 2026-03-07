@@ -1,6 +1,6 @@
 {
   "name": "@vipin733/nodescope",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "description": "A Laravel Telescope-inspired debugging and monitoring package for Node.js and Bun applications",
   "author": "Vipin",
