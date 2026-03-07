@@ -80,6 +80,7 @@ export async function fastifyNodeScope(
         await nodescope.recordEntry(entry);
       }
     } catch (error) {
+      console.error('NodeScope error recording request:', error);
       fastify.log.error('NodeScope error recording request:', error);
     }
   });
@@ -109,9 +110,26 @@ export async function fastifyNodeScope(
       return reply.status(403).send({ error: 'Unauthorized' });
     }
 
+    // Remove the dashboardPath from the beginning of the URL so the API handler matches correctly
+    let apiUrl = request.url;
+    if (apiUrl.startsWith(dashboardPath)) {
+      apiUrl = apiUrl.substring(dashboardPath.length);
+    // Ensure it starts with /api (in case dashboardPath was e.g. without trailing slash)
+      if (!apiUrl.startsWith('/')) apiUrl = '/' + apiUrl;
+    }
+
+    console.log('Fastify API Handler:', {
+      method: request.method,
+      originalUrl: request.url,
+      apiUrl,
+      query: request.query,
+      body: request.body
+    });
+
+    console.log("HANDLE API", { method: request.method, originalUrl: request.url, apiUrl });
     const response = await nodescope.api.handle({
       method: request.method,
-      url: request.url,
+      url: apiUrl,
       query: request.query as Record<string, string>,
       body: request.body as Record<string, unknown>,
     });
@@ -119,3 +137,6 @@ export async function fastifyNodeScope(
     return reply.status(response.status).send(response.body);
   });
 }
+
+// Mark as a global plugin so the hooks apply to all routes
+(fastifyNodeScope as any)[Symbol.for('skip-override')] = true;

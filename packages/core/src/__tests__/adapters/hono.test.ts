@@ -129,7 +129,7 @@ describe('Hono Adapter', () => {
 
       expect(response.status).toBe(200);
       const html = await response.text();
-      expect(html).toContain('<!DOCTYPE html>');
+      expect(html).toContain('<!doctype html>');
     });
 
     it('should track requests through the middleware', async () => {

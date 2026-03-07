@@ -1020,7 +1020,6 @@ declare function setupNodeScopeRoutes(app: any, nodescope: NodeScope): Promise<v
 
 /**
  * Get the embedded dashboard HTML
- * This is a simple HTML page that loads the dashboard React app
  */
 declare function getDashboardHtml(basePath: string): string;
 

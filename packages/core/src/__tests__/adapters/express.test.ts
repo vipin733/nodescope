@@ -163,7 +163,7 @@ describe('Express Routes (mountExpressRoutes)', () => {
       .expect(200);
 
     expect(response.headers['content-type']).toContain('text/html');
-    expect(response.text).toContain('<!DOCTYPE html>');
+    expect(response.text).toContain('<!doctype html>');
   });
 
   it('should track requests through the middleware', async () => {

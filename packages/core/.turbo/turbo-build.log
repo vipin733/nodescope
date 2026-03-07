@@ -1,0 +1,28 @@
+
+> @vipin733/nodescope@0.3.0 build
+> tsup src/index.ts --format cjs,esm --dts --clean --external better-sqlite3 --external pg --external mysql2 --external express --external hono --external fastify --external @nestjs/common --external rxjs
+
+CLI Building entry: src/index.ts
+CLI Using tsconfig: tsconfig.json
+CLI tsup v8.5.1
+CLI Target: es2022
+CLI Cleaning output folder
+CJS Build start
+ESM Build start
+CJS dist/index.cjs 334.61 KB
+CJS ⚡️ Build success in 49ms
+ESM dist/memory-5GF7O2HJ.js     113.00 B
+ESM dist/sqlite-DMOIPBIO.js     113.00 B
+ESM dist/chunk-6KBKW63X.js      4.18 KB
+ESM dist/postgresql-XD7N5SFI.js 121.00 B
+ESM dist/chunk-6H665NNC.js      6.13 KB
+ESM dist/mysql-KNBA3N7P.js      111.00 B
+ESM dist/chunk-BOBKU5LG.js      4.91 KB
+ESM dist/chunk-V5BR4MSS.js      5.65 KB
+ESM dist/chunk-OF6NKXP5.js      1.20 KB
+ESM dist/index.js               306.10 KB
+ESM ⚡️ Build success in 49ms
+DTS Build start
+DTS ⚡️ Build success in 1309ms
+DTS dist/index.d.cts 29.38 KB
+DTS dist/index.d.ts  29.38 KB

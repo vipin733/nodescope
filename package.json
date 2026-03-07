@@ -5,22 +5,33 @@
   "description": "A Laravel Telescope-inspired debugging and monitoring package for Node.js/Bun",
   "author": "Vipin",
   "license": "MIT",
+  "packageManager": "npm@11.6.2",
   "workspaces": [
     "packages/*",
     "examples/*"
   ],
   "scripts": {
-    "build": "npm run build -w @nodescope/core",
-    "dev": "npm run dev -w @nodescope/core",
-    "test": "npm run test -w @nodescope/core",
-    "test:watch": "npm run test:watch -w @nodescope/core",
-    "test:coverage": "npm run test:coverage -w @nodescope/core",
-    "lint": "npm run lint -w @nodescope/core",
-    "clean": "rm -rf node_modules packages/*/node_modules packages/*/dist examples/*/node_modules"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch",
+    "test:coverage": "turbo run test:coverage",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,js,json,md}\"",
+    "clean": "rimraf .turbo node_modules packages/*/node_modules packages/*/dist examples/*/node_modules",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "npm run build && changeset publish",
+    "prepare": "husky"
   },
   "devDependencies": {
-    "typescript": "^5.3.0",
-    "prettier": "^3.2.0"
+    "@changesets/cli": "^2.30.0",
+    "husky": "^9.1.7",
+    "prettier": "^3.8.1",
+    "rimraf": "^6.1.3",
+    "turbo": "^2.8.13",
+    "typescript": "^5.3.0"
   },
   "engines": {
     "node": ">=18.0.0"
