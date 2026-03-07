@@ -10,6 +10,7 @@ jobs:
     permissions:
       contents: read
       id-token: write # Required for provenance
+      deployments: write # Required for creating deployments
     
     steps:
       - name: Checkout code
